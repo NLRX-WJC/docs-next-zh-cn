@@ -1,27 +1,22 @@
-name: fetchUpstream
-
+name: Merge upstream branches
 on:
   push:
-    branches:
-      - master
   schedule:
-    - cron: "0 0 * * *"
-
+    - cron:  '0 0 * * *'
 jobs:
-  autogreen:
+  merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-
-      - name: fetchUpstream
+      - uses: actions/checkout@v2
+      - name: Merge upstream
         run: |
-          git config --local user.email "414961362@qq.com"
-          git config --local user.name "难凉热血"
-          git remote -v
-          git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
-          git remote -v
+          git config --global user.name "414961362@qq.com"
+          git config --global user.email "难凉热血"
+          git pull --unshallow  
+		      git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
           git fetch upstream
           git checkout master
-          git merge upstream/master
-          git push
+          git merge --no-edit upstream/master
+          git push origin master
+          
+       
