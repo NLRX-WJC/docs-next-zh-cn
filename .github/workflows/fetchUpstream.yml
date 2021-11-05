@@ -20,4 +20,5 @@ jobs:
           git config --local user.name "难凉热血"
           git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
           git pull upstream master --rebase
+          git pull origin master
           git push
