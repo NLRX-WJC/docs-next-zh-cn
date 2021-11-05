@@ -13,7 +13,7 @@ jobs:
           git config --global user.name "414961362@qq.com"
           git config --global user.email "难凉热血"
           git pull --unshallow  
-		      git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
+          git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
           git fetch upstream
           git checkout master
           git merge --no-edit upstream/master
