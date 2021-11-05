@@ -19,7 +19,7 @@ jobs:
           git config --local user.email "414961362@qq.com"
           git config --local user.name "难凉热血"
           git remote add upstream https://github.com/vuejs/docs-next-zh-cn.git
-          git fetch upstream
+          git pull --rebase
           git checkout master
           git merge upstream/master
           git push origin master --allow-unrelated-histories
